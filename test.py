@@ -57,13 +57,10 @@ def find_file():
         return 'File copied!'
     else:
         return 'File not found!'
+
 def coping():
-    global old_files
-    old_files = [] 
     try: 
         coping_file = shutil.copy(input_file_path + file_name_find, destination_path)
-        old_files.append(file_name_find)
-        print(old_files)
         return coping_file, "file copied!"   
     except (FileNotFoundError, NotADirectoryError):
         return "Error coping!"
